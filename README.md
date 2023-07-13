@@ -1,6 +1,6 @@
 # CSC307-Lab7
 
-## Responsibilities
+## Lab Group & Responsibilities
 
 Logan Schwarz - WorkArea, App (GUI)
 
@@ -18,4 +18,4 @@ Luis Magana - (661) 617-9794 - lmmagana@calpoly.edu
 
 Eeshan Mishra - (925) 502-9800 - emishra@calpoly.edu
 
-Triet Tran - (669) 220 8345 - ttran258@calpoly.edu
+Triet Tran - (669) 220-8345 - ttran258@calpoly.edu
