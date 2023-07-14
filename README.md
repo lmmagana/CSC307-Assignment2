@@ -1,4 +1,4 @@
-# CSC307-Lab7
+# CSC307-Assignment 2
 
 ## Lab Group & Responsibilities
 
