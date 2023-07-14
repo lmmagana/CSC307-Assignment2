@@ -16,5 +16,7 @@ public class DataSource extends Observable {
 
     public void addData(Dot d){
         _instance.add(d);
+        setChanged();
+        notifyObservers();
     }
 }
