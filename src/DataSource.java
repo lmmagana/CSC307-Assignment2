@@ -7,7 +7,7 @@ public class DataSource extends Observable {
 
     protected DataSource(){}
 
-    public static ArrayList<Dot> getData(){
+    public static ArrayList<Dot> getInstance(){
         if(_instance.size() == 0){
             _instance = new ArrayList<Dot>();
         }

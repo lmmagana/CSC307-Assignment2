@@ -28,7 +28,7 @@ public class ClusterHandler implements Observer {
     @Override
     public void update(Observable o, Object arg) {
         DataSource src = ((DataSource)o);
-        ArrayList<Dot> myDots = src.getData();
+        ArrayList<Dot> myDots = src.getInstance();
         myDots.get(0).setColor(Color.RED);
         myDots.get(1).setColor(Color.BLUE);
         calculate(myDots);

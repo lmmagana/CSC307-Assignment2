@@ -1,24 +1,24 @@
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.Stack;
 import javax.swing.JPanel;
 
 public class WorkArea extends JPanel implements MouseListener {
 
-    private Stack<Dot> dots;
+    DataSource dots = new DataSource();
     private int x, y;
 
     public WorkArea() {
         addMouseListener(this);
-        dots = new Stack<Dot>();
     }
 
     @Override
     public void mousePressed(MouseEvent e) {
         x=e.getX();
         y=e.getY();
-        dots.push(new Dot(x,y));
+        dots.addData(new Dot(x,y, Color.DARK_GRAY));
         repaint();
     }
 
@@ -27,8 +27,8 @@ public class WorkArea extends JPanel implements MouseListener {
         setBackground(Color.GRAY);
         super.paintComponent(g);
 
-        if(dots!=null) {
-            for(Dot dot: dots) dot.draw(g);
+        if(dots.getInstance()!=null) {
+            for(Dot dot: dots.getInstance()) dot.draw(g);
         }
         g.setColor(Color.DARK_GRAY);
         g.drawOval(x-4, y-4, 7, 7);
