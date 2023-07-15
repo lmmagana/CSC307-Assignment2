@@ -1,16 +1,17 @@
 import java.util.Observable;
 import java.util.Observer;
 import java.util.ArrayList;
+import java.awt.*;
 public class ClusterHandler implements Observer {
     public void calculate(ArrayList<Dot> dots) {
         int size = dots.size();
-        Dot minDot = dots.get(0);
+        Dot minDot = dots.get(2);
         Dot newD = dots.get(size-1);
         double minDist = Math.pow(10.0, 100);
         int xDiff = 0;
         int yDiff = 0;
 
-        for (int i = 0; i < size-1; i++) {
+        for (int i = 2; i < size-1; i++) {
             Dot d = dots.get(i);
             xDiff = newD.getX() - d.getX();
             yDiff = newD.getY() - d.getY();
@@ -28,6 +29,8 @@ public class ClusterHandler implements Observer {
     public void update(Observable o, Object arg) {
         DataSource src = ((DataSource)o);
         ArrayList<Dot> myDots = src.getData();
+        myDots.get(0).setColor(Color.BLUE);
+        myDots.get(1).setColor(Color.BLUE);
         calculate(myDots);
     }
 }
