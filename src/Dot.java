@@ -1,7 +1,6 @@
 import java.awt.*;
 
 public class Dot {
-
     private int positionX, positionY;
     private Color color;
 
@@ -34,4 +33,10 @@ public class Dot {
     public void setColor(Color color) {
         this.color = color;
     }
+
+    public void draw(Graphics g) {
+        g.setColor(Color.DARK_GRAY);
+        g.fillOval(positionX - 4, positionY - 4, 7, 7);
+    }
+
 }
