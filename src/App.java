@@ -62,6 +62,8 @@ public class App extends JFrame implements ActionListener {
         app.setVisible(true);
         app.setResizable(false);
 
+        ClusterHandler c = new ClusterHandler();
+        DataSource.getInstance().addObserver(c);
     }
 
     @Override
@@ -71,6 +73,7 @@ public class App extends JFrame implements ActionListener {
             if (clusterSelect == 1){
                 // perform cluster thing
                 System.out.println("Perform Cluster");
+
             }
             if (lineSelect == 1){
                 // perform line thing

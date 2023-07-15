@@ -35,7 +35,7 @@ public class Dot {
     }
 
     public void draw(Graphics g) {
-        g.setColor(Color.DARK_GRAY);
+        g.setColor(color);
         g.fillOval(positionX - 4, positionY - 4, 7, 7);
     }
 

@@ -3,8 +3,9 @@ import java.util.Observer;
 import java.util.ArrayList;
 import java.awt.*;
 public class ClusterHandler implements Observer {
-    public void calculate(ArrayList<Dot> dots) {
+    public void calculate(DataSource dots) {
         int size = dots.size();
+        if(size < 3) return;
         Dot minDot = dots.get(2);
         Dot newD = dots.get(size-1);
         double minDist = Math.pow(10.0, 100);
@@ -27,10 +28,15 @@ public class ClusterHandler implements Observer {
 
     @Override
     public void update(Observable o, Object arg) {
-        DataSource src = ((DataSource)o);
-        ArrayList<Dot> myDots = src.getInstance();
-        myDots.get(0).setColor(Color.RED);
-        myDots.get(1).setColor(Color.BLUE);
-        calculate(myDots);
+        //DataSource src = ((DataSource)o);
+        DataSource src = DataSource.getInstance();
+        //ArrayList<Dot> myDots = src.getData();
+       // myDots.get(0).setColor(Color.RED);
+       // myDots.get(1).setColor(Color.BLUE);
+        src.setColor(0, Color.RED);
+        if(src.size() >= 2){
+            src.setColor(1, Color.BLUE);
+        }
+        calculate(src);
     }
 }

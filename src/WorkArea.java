@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 
 public class WorkArea extends JPanel implements MouseListener {
 
-    DataSource dots = new DataSource();
+    DataSource dots = DataSource.getInstance();
     private int x, y;
 
     public WorkArea() {
@@ -18,7 +18,7 @@ public class WorkArea extends JPanel implements MouseListener {
     public void mousePressed(MouseEvent e) {
         x=e.getX();
         y=e.getY();
-        dots.addData(new Dot(x,y, Color.DARK_GRAY));
+        dots.addData(new Dot(x,y, Color.LIGHT_GRAY));
         repaint();
     }
 
@@ -27,10 +27,9 @@ public class WorkArea extends JPanel implements MouseListener {
         setBackground(Color.GRAY);
         super.paintComponent(g);
 
-        if(dots.getInstance()!=null) {
-            for(Dot dot: dots.getInstance()) dot.draw(g);
+        if(dots != null) {
+            for(Dot dot: dots.getData()) dot.draw(g);
         }
-        g.setColor(Color.DARK_GRAY);
         g.drawOval(x-4, y-4, 7, 7);
     }
 
