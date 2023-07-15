@@ -82,16 +82,14 @@ public class App extends JFrame implements ActionListener {
         if (e.getActionCommand().equals("Cluster - K-means")){
             if (clusterSelect == 0) {
                 clusterSelect = 1;
-            }
-            if (clusterSelect == 1) {
+            } else if (clusterSelect == 1) {
                 clusterSelect = 0;
             }
         }
         if (e.getActionCommand().equals("Line - Nearest Neighbor")){
             if (lineSelect == 0) {
                 lineSelect = 1;
-            }
-            if (lineSelect == 1) {
+            } else if (lineSelect == 1) {
                 lineSelect = 0;
             }
         }
