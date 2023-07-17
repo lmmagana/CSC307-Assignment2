@@ -9,6 +9,8 @@ public class WorkArea extends JPanel implements MouseListener {
 
     DataSource dots = DataSource.getInstance();
     private int x, y;
+    LineHandler lineHandler = new LineHandler(dots);
+    private boolean drawLinesFlag = false;
 
     public WorkArea() {
         addMouseListener(this);
@@ -22,6 +24,9 @@ public class WorkArea extends JPanel implements MouseListener {
         repaint();
     }
 
+    public void setDrawLinesFlag(boolean drawLinesFlag) {
+        this.drawLinesFlag = drawLinesFlag;
+    }
     public void paintComponent (Graphics g) {
 
         setBackground(Color.GRAY);
@@ -29,6 +34,9 @@ public class WorkArea extends JPanel implements MouseListener {
 
         if(dots != null) {
             for(Dot dot: dots.getData()) dot.draw(g);
+        }
+        if(drawLinesFlag) {
+            lineHandler.drawLines(g); 
         }
         g.drawOval(x-4, y-4, 7, 7);
     }
