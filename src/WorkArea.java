@@ -9,7 +9,7 @@ public class WorkArea extends JPanel implements MouseListener {
 
     DataSource dots = DataSource.getInstance();
     private int x, y;
-    LineHandler lineHandler = new LineHandler(dots);
+    LineHandler lineHandler = new LineHandler();
     private boolean drawLinesFlag = false;
 
     public WorkArea() {

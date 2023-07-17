@@ -60,7 +60,7 @@ public class App extends JFrame implements ActionListener {
             }
             if (lineCheckbox.isSelected()){
                 workArea.setDrawLinesFlag(true);           
-                LineHandler l = new LineHandler(DataSource.getInstance());
+                LineHandler l = new LineHandler();
                 DataSource.getInstance().addObserver(l);
                 workArea.repaint(); 
             }
