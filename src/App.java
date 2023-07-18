@@ -7,10 +7,11 @@ public class App extends JFrame implements ActionListener {
 
     private WorkArea workArea;
     private JCheckBox clusterCheckbox, lineCheckbox;
+    private ClusterHandler c;
 
     public App() {
         super("My Project Two");
-        ClusterHandler c = new ClusterHandler();
+        c = new ClusterHandler();
         DataSource.getInstance().addObserver(c);
 
         // west panel
