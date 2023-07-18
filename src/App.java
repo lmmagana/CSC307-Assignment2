@@ -10,6 +10,8 @@ public class App extends JFrame implements ActionListener {
 
     public App() {
         super("My Project Two");
+        ClusterHandler c = new ClusterHandler();
+        DataSource.getInstance().addObserver(c);
 
         // west panel
         setLayout(new BorderLayout());
@@ -53,9 +55,8 @@ public class App extends JFrame implements ActionListener {
         System.out.println(e.getActionCommand());
         if (e.getActionCommand().equals("Run")){
             if (clusterCheckbox.isSelected()){
-                workArea.setDrawLinesFlag(false);           
-                ClusterHandler c = new ClusterHandler();
-                DataSource.getInstance().addObserver(c);
+                workArea.setDrawLinesFlag(false);  
+                c.update(DataSource.getInstance(), workArea);         
                 workArea.repaint(); 
             }
             if (lineCheckbox.isSelected()){
