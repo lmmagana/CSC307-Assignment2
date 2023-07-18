@@ -25,7 +25,7 @@ public class DataSource extends Observable {
     public void addData(Dot d){
         dots.add(d);
         setChanged();
-        notifyObservers();
+        //notifyObservers();
     }
 
     public void setColor(int position, Color c){
